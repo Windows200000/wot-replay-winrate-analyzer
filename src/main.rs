@@ -102,7 +102,7 @@ pub fn loop_through_files(folder: &str) -> Result<serde_json::Value, Box<dyn std
 
 
 	};
-	//println!("paths: {}", serde_json::to_string_pretty(&paths).unwrap())
+	//write_to_file("output.json", serde_json::to_string_pretty(&battles_json).unwrap());
 	Ok(battles_json)
 }
 
@@ -170,7 +170,7 @@ pub fn write_to_file(name:&str, json:String) {
 
 pub fn filter_players(input:serde_json::Value, filter: &str) -> serde_json::Value {
 	let mut output = vec![];
-	write_to_file("filtered.json", serde_json::to_string_pretty(&input).unwrap());
+	//write_to_file("filtered.json", serde_json::to_string_pretty(&input).unwrap());
 	let mut count = 0;
 
 	for battle in input.as_array().unwrap().iter() {
